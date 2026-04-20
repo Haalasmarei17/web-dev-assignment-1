@@ -1,0 +1,189 @@
+/* Sara Al-Zahrani - Personal Resume
+   CCSW321 Web Development - University of Jeddah */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+  background: #f0f4fb;
+  color: #1a2f4a;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+/* ---- SIDEBAR ---- */
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: #e8f0fb;
+  border-right: 2px solid #b8d4f5;
+  padding: 32px 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.avatar-ring {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #b8d4f5, #c4d8f8, #a8c8f0);
+  margin: 0 auto 8px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  background: #b8d4f5;
+}
+
+.sidebar-profile { text-align: center; }
+.sidebar-name { font-size: 1.2rem; color: #1e3a5f; }
+.sidebar-role { font-size: 0.72rem; color: #5a7499; text-transform: uppercase; letter-spacing: 0.05em; }
+
+hr { border: none; border-top: 1px solid #ccdaf5; }
+
+.sidebar-info { display: flex; flex-direction: column; gap: 9px; }
+.sidebar-info li { font-size: 0.8rem; color: #5a7499; display: flex; gap: 8px; }
+
+.sidebar-nav { display: flex; flex-direction: column; gap: 3px; }
+.nav-link { display: block; padding: 8px 12px; border-radius: 8px; font-size: 0.88rem; color: #5a7499; font-weight: 600; }
+.nav-link:hover { background: #b8d4f5; color: #1e3a5f; }
+
+.sidebar-socials { display: flex; justify-content: center; gap: 10px; margin-top: auto; }
+.social-btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1.5px solid #ccdaf5; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 700; color: #4a6a99;
+}
+.social-btn:hover { background: #b8d4f5; color: #1e3a5f; }
+
+/* ---- MAIN CONTENT ---- */
+.main-content { flex: 1; padding: 48px 44px; min-width: 0; }
+
+.content-section { padding-bottom: 48px; border-bottom: 1px solid #ccdaf5; margin-bottom: 48px; }
+.content-section:last-of-type { border-bottom: none; margin-bottom: 0; }
+
+.section-badge {
+  display: inline-block; background: #b8d4f5; color: #1e3a5f;
+  font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em;
+  padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; font-weight: 700;
+}
+
+.section-heading { font-size: 2rem; color: #1e3a5f; margin-bottom: 18px; }
+.body-text { font-size: 0.95rem; color: #5a7499; margin-bottom: 12px; max-width: 640px; }
+
+/* ---- ABOUT CARDS ---- */
+.obj-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+.obj-card { background: #fff; border: 1.5px solid #ccdaf5; border-radius: 12px; padding: 16px; display: flex; gap: 10px; }
+.obj-card:hover { box-shadow: 0 4px 16px rgba(30,58,95,0.08); transform: translateY(-2px); }
+.obj-icon { font-size: 1.4rem; }
+.obj-card h3 { font-family: 'Nunito', sans-serif; font-size: 0.85rem; color: #1e3a5f; margin-bottom: 3px; }
+.obj-card p { font-size: 0.78rem; color: #5a7499; line-height: 1.5; }
+
+/* ---- TIMELINE ---- */
+.timeline {padding-left: 0;}
+.tl-item { margin-bottom: 20px;}
+.tl-card { background: #fff; border: 1.5px solid #ccdaf5; border-radius: 12px; padding: 18px 20px;}
+.tl-date { font-size: 0.7rem; color: #3a7bd5; font-weight: 700; display: block; margin-bottom: 4px; }
+.tl-title { font-size: 1.05rem; color: #1e3a5f; margin-bottom: 3px; }
+.tl-place { font-size: 0.78rem; color: #5a7499; margin-bottom: 7px; font-weight: 600; }
+.tl-desc { font-size: 0.84rem; color: #5a7499; }
+
+/* ---- SKILLS ---- */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 16px; }
+.skills-group { background: #fff; border: 1.5px solid #ccdaf5; border-radius: 12px; padding: 18px 20px; }
+.skills-group:hover { box-shadow: 0 4px 16px rgba(30,58,95,0.08); }
+.skills-group-title { font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 700; color: #1e3a5f; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #ccdaf5; }
+.skills-list { list-style: disc; padding-left: 16px; display: flex; flex-direction: column; gap: 6px; }
+.skills-list li { font-size: 0.85rem; color: #5a7499; }
+.skills-list li::marker { color: #3a7bd5; }
+
+/* ---- PROJECTS ---- */
+.projects-list { display: flex; flex-direction: column; gap: 16px; }
+.proj-item { background: #fff; border: 1.5px solid #ccdaf5; border-left: 4px solid #3a7bd5; border-radius: 12px; padding: 22px 24px; }
+.proj-item:hover { box-shadow: 0 4px 16px rgba(30,58,95,0.08); transform: translateY(-2px); }
+.proj-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.proj-tag { background: #b8d4f5; color: #1e3a5f; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
+.proj-title { font-size: 1.1rem; color: #1e3a5f; }
+.proj-desc { font-size: 0.88rem; color: #5a7499; line-height: 1.7; margin-bottom: 14px; }
+.proj-links { display: flex; gap: 14px; }
+.plink { font-size: 0.8rem; font-weight: 700; color: #5a7499; border-bottom: 1.5px solid #ccdaf5; padding-bottom: 2px; }
+.plink:hover { color: #3a7bd5; border-color: #3a7bd5; }
+.plink-accent { color: #3a7bd5; border-color: #b8d4f5; }
+
+/* ---- CERTIFICATES ---- */
+.certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.cert-card { background: #fff; border: 1.5px solid #ccdaf5; border-radius: 12px; overflow: hidden; }
+.cert-card:hover { box-shadow: 0 6px 20px rgba(30,58,95,0.1); transform: translateY(-3px); }
+.cert-img { width: 100%; height: 145px; object-fit: cover; object-position: top; display: block; }
+.cert-img-placeholder { background: linear-gradient(135deg, #b8d4f5, #a8c8f0); }
+.cert-img-gold { background: linear-gradient(135deg, #f5e6a8, #e8c84a); }
+.cert-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.cert-title { font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 700; color: #1e3a5f; }
+.cert-issuer { font-size: 0.72rem; color: #5a7499; font-weight: 600; margin-bottom: 2px; }
+
+/* ---- CONTACT FORM ---- */
+.contact-wrap { max-width: 500px; display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+.form-group label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #5a7499; font-weight: 700; }
+.form-group input, .form-group textarea {
+  background: #fff; border: 1.5px solid #ccdaf5; border-radius: 8px;
+  padding: 10px 12px; font-family: 'Nunito', sans-serif; font-size: 0.9rem;
+  color: #1a2f4a; outline: none; resize: vertical;
+}
+.form-group input:focus, .form-group textarea:focus { border-color: #3a7bd5; box-shadow: 0 0 0 3px rgba(58,123,213,0.12); }
+.form-group input::placeholder, .form-group textarea::placeholder { color: #a0b8d8; }
+.send-btn {
+  align-self: flex-start; background: linear-gradient(135deg, #b8d4f5, #3a7bd5);
+  color: #fff; border: none; border-radius: 8px; padding: 11px 26px;
+  font-family: 'Nunito', sans-serif; font-size: 0.9rem; font-weight: 700; cursor: pointer;
+}
+.send-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(58,123,213,0.35); }
+
+/* ---- FOOTER ---- */
+.main-footer { text-align: center; padding: 32px 0 16px; color: #5a7499; font-size: 0.8rem; }
+.footer-note { font-size: 0.68rem; color: #ccdaf5; margin-top: 4px; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 992px) {
+  .main-content { padding: 40px 28px; }
+  .obj-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .layout { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 2px solid #b8d4f5; }
+  .main-content { padding: 28px 18px; }
+  .obj-cards { grid-template-columns: 1fr 1fr; }
+  .certs-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 576px) {
+  .main-content { padding: 20px 14px; }
+  .obj-cards, .certs-grid, .skills-grid { grid-template-columns: 1fr; }
+  .send-btn { width: 100%; justify-content: center; }
+}
