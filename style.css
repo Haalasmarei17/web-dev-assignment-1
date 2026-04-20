@@ -41,7 +41,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; }
   gap: 18px;
 }
 .sidebar-profile {
-  gap: 0;
+  margin-top: 0;
 }
 
 .avatar,
